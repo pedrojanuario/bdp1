@@ -1,0 +1,4 @@
+#arquivos/pastas ignoradas pelo git
+
+node_modules/
+.env
