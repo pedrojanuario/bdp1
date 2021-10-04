@@ -1,0 +1,22 @@
+//teste do RES
+
+@baseURL = http://localhost:4000
+##
+//GET- LISTA OS FUNCIONARIOS
+
+GET {{baseURL}}/funcionarios
+Content-Type: application/json
+
+##
+
+// POST INCLUI NOVO FUNCIONARIO
+POST {{baseURL}}/funcionarios
+Content-Type: application/json
+
+{
+    "nome": "Pedro Henrique",
+    "status":"proprio",
+    "idade":"23",
+    "cargo": "Analista",
+    "salario":"3000"
+}
