@@ -3,19 +3,20 @@
 @baseURL = http://localhost:4000
 //GET- LISTA OS FUNCIONARIOS
 GET {{baseURL}}/funcionarios
-Content-Type: application/json
+
 
 //GET- ID
 GET {{baseURL}}/funcionarios/{{id}}
 Content-Type: application/json
-@id = 615b4a0155315fcf529a4554
+@id = 615b661c2c3081548ebd2645
+
 ##################################################################
 // POST INCLUI NOVO FUNCIONARIO
 POST {{baseURL}}/funcionarios
 Content-Type: application/json
 
 {
-    "nome": "Luis Santos",
+    "nome": "Clara Lima",
     "status":"proprio",
     "idade":"23",
     "cargo": "Analista",
@@ -43,4 +44,4 @@ Content-Type: application/json
 DELETE   {{baseURL}}/funcionarios/{{id}}
 Content-Type: application/json
 
-@id = 615b573e640d7f9eceb73c15
+@id = 615b52a43570692281e07f33
