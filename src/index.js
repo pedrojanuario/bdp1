@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 require('dotenv').config()// carrega as variaveis de ambiente
 const InicializaMongoServer = require('../config/dbfuncionarios')
@@ -7,7 +8,7 @@ const rotasFuncionarios = require('../routes/Funcionarios')
 InicializaMongoServer() // mongo inicializado
 
 app.use(express.json()) //faz parte do json
-
+app.use(cors())
 const PORT = process.env.PORT
 
 app.get('/', (req, res) => //req = manda para o servidor / res= resposta, (req,res) => //req = manda para o servidor / res= resposta
