@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
 
+const mongoose = require('mongoose')
 const FuncionariosSchema = mongoose.Schema({
     nome: { type: String },
     status: { type: String, enum: ['proprio', 'terceirizado'], default: 'proprio' },
