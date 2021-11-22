@@ -19,7 +19,6 @@ app.get('/', (req, res) => //req = manda para o servidor / res= resposta, (req,r
     })
 })
 
-
 //rotas app
 app.use('/funcionarios', rotasFuncionarios)
 
