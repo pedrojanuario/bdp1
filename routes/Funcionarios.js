@@ -6,7 +6,7 @@ const { check, validationResult } = require('express-validator')
 
 //valida o POST
 const validaFuncionarios = [
-    check("nome", 'O campo Nome é obrigatorio').not().isEmpty(),
+    check('nome', 'O campo Nome é obrigatorio!!!').not().isEmpty(),
     check('status', 'Informe o status do Funcionario').isIn(['proprio', 'terceirizado'])
 ]
 
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 
     } catch (err) {
         res.status(500).send({
-            errors: [{ message: `Nao foi possivel obter o Funcionario por ID ${req.params.id}` }]
+            errors: [{ message: `Nao foi possivel obter os dados do Funcionario por ID ${req.params.id}` }]
         })
     }
 })
@@ -49,6 +49,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', validaFuncionarios,
     async (req, res) => {
         const errors = validationResult(req)
+
         if (!errors.isEmpty()) {
             return res.status(400).json(({
                 errors: errors.array()
@@ -103,9 +104,9 @@ router.put('/', validaFuncionarios,
         }
 
     })
-    //##################################################//##################################################
-    
-    //DELETE = remove os dados do funcionario
+//##################################################//##################################################
+
+//DELETE = remove os dados do funcionario
 
 router.delete('/:id', async (req, res) => {
     await Funcionarios.findByIdAndRemove(req.params.id)
